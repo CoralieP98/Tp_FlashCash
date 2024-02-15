@@ -21,7 +21,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message = "Username is mandatory")
+    @NotBlank(message = "Password is mandatory")
     private String password;
 
     @OneToOne
