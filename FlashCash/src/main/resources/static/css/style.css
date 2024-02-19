@@ -70,6 +70,16 @@ button.ghost {
 	border-color: #FFFFFF;
 }
 
+.signInLink {
+text-decoration:none;
+color:white;}
+
+.signUpLink {
+text-decoration:none;
+color:white;}
+
+
+
 form {
 	background-color: #FFFFFF;
 	display: flex;
