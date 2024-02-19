@@ -2,6 +2,7 @@ package com.CoralieP98.FlashCash.Service;
 
 import com.CoralieP98.FlashCash.Model.Account;
 import com.CoralieP98.FlashCash.Model.User;
+import com.CoralieP98.FlashCash.Repository.AccountRepository;
 import com.CoralieP98.FlashCash.Repository.UserRepository;
 import com.CoralieP98.FlashCash.Service.Form.SignUpForm;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,9 +12,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+
+    private final AccountRepository accountRepository;
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AccountRepository accountRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.accountRepository = accountRepository;
     }
 
     public User registration(SignUpForm form){

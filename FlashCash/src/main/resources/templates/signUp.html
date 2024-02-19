@@ -21,7 +21,7 @@
             <input type="text" th:field="*{lastName}" placeholder="Last Name" />
             <input type="email" th:field="*{email}" placeholder="Email" required autofocus/>
             <p class="text-danger" style="display:none" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-            <input type="password" placeholder="Password" required autofocus/>
+            <input type="password" th:field="*{password}" placeholder="Password" required autofocus/>
             <p class="text-danger" style="display:none" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
 
             <button type="submit">Sign Up</button>

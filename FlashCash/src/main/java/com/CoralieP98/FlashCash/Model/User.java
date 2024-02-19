@@ -24,8 +24,8 @@ public class User {
     @NotBlank(message = "Password is mandatory")
     private String password;
 
-    @OneToOne
-    private Account Account;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Account account;
 
     @ManyToMany
     private List<SocialLink> socialLinks;
@@ -39,7 +39,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        Account = account;
+        this.account = account;
         this.socialLinks = socialLinks;
     }
 
@@ -84,11 +84,11 @@ public class User {
     }
 
     public com.CoralieP98.FlashCash.Model.Account getAccount() {
-        return Account;
+        return account;
     }
 
     public void setAccount(com.CoralieP98.FlashCash.Model.Account account) {
-        Account = account;
+        this.account = account;
     }
 
     public List<SocialLink> getSocialLinks() {
