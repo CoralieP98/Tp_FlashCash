@@ -1,7 +1,8 @@
 package com.CoralieP98.FlashCash.Service;
 
+import com.CoralieP98.FlashCash.Model.User;
 import com.CoralieP98.FlashCash.Repository.UserRepository;
-import org.springframework.security.core.userdetails.User;
+//import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,8 +22,8 @@ public class AuthenticationService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<com.CoralieP98.FlashCash.Model.User> user = userRepository
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        Optional<User> user = userRepository
                 .findUserByMail(s);
         if (user.isPresent()){
             return new org.springframework.security.core.userdetails.User(user.get().getEmail(),user.get().getPassword(), new ArrayList<>());

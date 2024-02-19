@@ -1,9 +1,9 @@
 package com.CoralieP98.FlashCash.Controller;
 
-import ch.qos.logback.core.model.Model;
 import com.CoralieP98.FlashCash.Service.Form.SignUpForm;
 import com.CoralieP98.FlashCash.Service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
