@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
     <meta charset="UTF-8">
-<!--    <link rel="stylesheet" href="css/home.css">-->
-    <link rel="stylesheet" href="../static/css/home.css">
+        <link rel="stylesheet" href="css/home.css">
+<!--    <link rel="stylesheet" href="/static/css/home.css">-->
     <script src="https://kit.fontawesome.com/84b2e4f32b.js" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
 <nav>
     <div class="wrapper">
-        <div class="logo"><a href="#">Logo</a></div>
+        <div class="logo"><a href="#">FlashCash</a></div>
         <input type="radio" name="slider" id="menu-btn">
         <input type="radio" name="slider" id="close-btn">
         <ul class="nav-links">
@@ -19,7 +19,7 @@
             <li><a href="#">Profile</a></li>
             <li><a href="#">Transfers</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#" class="logout">Log out</a></li>
+            <li><a href="#" id="out">Log out</a></li>
 
 
         </ul>
@@ -28,12 +28,34 @@
 </nav>
 
 <div class="body-text">
-    <div class="title">Flash Cash</div>
+    <div class="title">Welcome</div>
     <div class="sub-title">Home</div>
+</div>
+<div class="body-image">
+    <figcaption>
+        <img src="images/home_img.jpg" class="img" alt="">
+    </figcaption>
 </div>
 
 <footer>
-
+    <div class="footer">
+        <div class="Footer-block">
+            <ul class="Footer-block-list">
+                <li>
+                    <div class="logo"><a href="#">FlashCash</a></div>
+                </li>
+                <li>
+                    <a href="#">Service client</a>
+                </li>
+            </ul>
+            <ul class="Footer-block-list">
+                <li>
+                    <p>©Lorem ipsum</p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </footer>
+
 </body>
 </html>
