@@ -1,5 +1,6 @@
 package com.CoralieP98.FlashCash.Controller;
 
+import com.CoralieP98.FlashCash.Service.CustomService;
 import com.CoralieP98.FlashCash.Service.Form.SignUpForm;
 import com.CoralieP98.FlashCash.Service.UserService;
 import org.springframework.stereotype.Controller;
@@ -14,14 +15,17 @@ public class UserController {
 
     private final UserService userService;
 
+    private final CustomService customService;
 
-    public UserController(UserService userService) {
+
+    public UserController(UserService userService, CustomService customService) {
         this.userService = userService;
+        this.customService = customService;
     }
 
     @GetMapping("/")
-    public ModelAndView home(Model model){
-        return new ModelAndView("home");
+    public String home(Model model){
+        return "redirect:/home";
     }
 
     @PostMapping("/signUp")
@@ -39,4 +43,13 @@ public class UserController {
     public String logOff(Model model){
         return "home";
     }
+
+    @GetMapping("/User/profile")
+    public ModelAndView userProfil(Model model){
+        model.addAttribute("users",customService.actualUser());
+        return new ModelAndView("/User/user-profil");
+    }
+
+
+
 }

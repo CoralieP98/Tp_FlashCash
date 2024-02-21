@@ -24,7 +24,7 @@ public class User {
     @NotBlank(message = "Password is mandatory")
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Account account;
 
     @ManyToMany

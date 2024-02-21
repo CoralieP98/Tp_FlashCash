@@ -149,6 +149,12 @@ transition: all 0.3s ease;
   .img{
     width: 400px;
 }
+
+.AccountState{
+  padding-bottom: 10%;
+}
+
+
 }
 
 
@@ -181,7 +187,6 @@ footer{
 
 }
 
-
 .footer{
     height: 100px;
     bottom: 0;
@@ -212,6 +217,111 @@ footer{
 .Footer-block-list .logo{
     font-size: 25px;
     font-weight: 600;
+
+}
+
+.Services{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.Services-card{
+  width: 300px;
+  height: 290px;
+  border-radius: 15px;
+  margin: 0 20px 20px 20px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.Services-card-title1{
+  background: #7524d3;
+	background: -webkit-linear-gradient(to right, #1a92ca, #386ecd);
+	background: linear-gradient(to right, #1a92ca, #386ecd);
+  padding: 15px 0;
+  color: white;
+
+}
+
+.Services-card-title2{
+  background: #7524d3;
+	background: -webkit-linear-gradient(to right, #386ecd, #564ad0);
+	background: linear-gradient(to right, #386ecd, #564ad0);
+  padding: 15px 0;
+  color: white;
+
+}
+
+.Services-card-title3{
+  background: #7524d3;
+	background: -webkit-linear-gradient(to right, #564ad0, #7524d3);
+	background: linear-gradient(to right, #564ad0, #7524d3);
+  padding: 15px 0;
+  color: white;
+}
+
+.Services-card-text{
+  padding: 30px 20px 15px 20px;
+}
+
+.Services-card-text p{
+  padding-bottom: 5px;
+}
+
+.Services-card-button{
+  background-color: white;
+  border: #7524d3 solid 1px;
+  border-radius: 5px;
+  width: 250px;
+  padding: 7px 0;
+}
+
+.Services-card-button:hover{
+  background-color: #7524d3;
+}
+
+
+.Services-card-button a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #7524d3;
+
+}
+
+.Services-card-button:hover a{
+  color: white;
+}
+
+.AccountState{
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AccountState-table{
+  margin: 30px auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 60%;
+  text-align: center;
+
+}
+
+
+.AccountState-table table{
+  width: 60%;
+}
+
+
+.AccountState-table thead tr th, .AccountState-table tbody tr td{
+  width: 50%;
+  padding: 5px 0;
 
 }
 
