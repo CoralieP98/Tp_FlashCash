@@ -32,12 +32,13 @@
     <div class="body-text">
         <div class="title">Add an IBAN</div>
     </div>
-    <form th:action="@{/addIban}" th:object="${ibanForm}" method="POST">
-        <h1 class="title">Add your Iban</h1>
-        <input type="text" th:field="*{iban1}" placeholder="Your IBAN" />
-
-        <button type="submit">Add</button>
-    </form>
+    <section >
+        <form class="Form-addIban" th:action="@{/addIban}" th:object="${ibanForm}" method="POST">
+            <h2 class="Form-addIban-title">Add your Iban</h2>
+            <input class="Form-addIban-input" type="text" th:field="*{iban1}" placeholder="Your IBAN" />
+            <button class="Form-addIban-butn" type="submit">Add</button>
+        </form>
+    </section>
 
 
 </main>
