@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="fr">
+
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/home.css">
-<!--    <link rel="stylesheet" href="/static/css/home.css">-->
+<!--    <link rel="stylesheet" href="home.css">-->
+    <!-- <link rel="stylesheet" href="../../static/css/home.css"> -->
+     <link rel="stylesheet" href="../css/home.css">
     <script src="https://kit.fontawesome.com/84b2e4f32b.js" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <title>Add IBAN</title>
 </head>
+
 <body>
 <nav>
     <div class="wrapper">
@@ -15,27 +18,29 @@
         <input type="radio" name="slider" id="close-btn">
         <ul class="nav-links">
             <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-            <li><a href="#">Home</a></li>
-            <li><a href="/User/profile">Profile</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Profile</a></li>
             <li><a href="#">Transfers</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="/signIn" id="out">Log out</a></li>
-
-
+            <li><a href="#" id="out">Log out</a></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
 </nav>
 
-<div class="body-text">
-    <div class="title">Welcome</div>
-    <div class="sub-title">Home</div>
-</div>
-<div class="body-image">
-    <figcaption>
-        <img src="images/home_img.jpg" class="img" alt="">
-    </figcaption>
-</div>
+<main>
+    <div class="body-text">
+        <div class="title">Add an IBAN</div>
+    </div>
+    <form th:action="@{/addIban}" th:object="${ibanForm}" method="POST">
+        <h1 class="title">Add your Iban</h1>
+        <input type="text" th:field="*{iban1}" placeholder="Your IBAN" />
+
+        <button type="submit">Add</button>
+    </form>
+
+
+</main>
 
 <footer>
     <div class="footer">
@@ -58,4 +63,5 @@
 </footer>
 
 </body>
+
 </html>
