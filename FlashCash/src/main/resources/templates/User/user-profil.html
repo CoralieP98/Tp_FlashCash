@@ -77,12 +77,17 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.email}"></td>
-                <td th:text="${user.account.amount}"></td>
+            <tr th:object="${user}">
+                <td th:text="*{email}"></td>
+                <td th:text="*{account.amount}"></td>
             </tr>
             </tbody>
         </table>
+    </section>
+
+    <section class="User-Iban">
+        <h2 class="User-Iban-title">Your IBAN</h2>
+        <p th:text="${user.account.iban1}"></p>
     </section>
 
 </main>

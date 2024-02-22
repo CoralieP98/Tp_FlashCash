@@ -46,7 +46,7 @@ public class UserController {
 
     @GetMapping("/User/profile")
     public ModelAndView userProfil(Model model){
-        model.addAttribute("users",customService.actualUser());
+        model.addAttribute("user",customService.actualUser());
         return new ModelAndView("/User/user-profil");
     }
 

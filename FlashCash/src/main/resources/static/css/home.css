@@ -298,6 +298,7 @@ footer{
   text-decoration: none;
   font-weight: 500;
   color: #7524d3;
+   padding: 15px 100px;
 
 }
 
@@ -401,5 +402,8 @@ button.ghost {
   border: solid 2px #3318ad;
 }
 
-
+.User-Iban{
+  margin-bottom: 10%;
+  text-align: center;
+}
 

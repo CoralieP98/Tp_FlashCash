@@ -33,9 +33,9 @@ public class AccountController {
     }
 
     @PostMapping("/addIban")
-    public ModelAndView saveIban(@ModelAttribute("ibanForm") IbanForm iban){
+    public String saveIban(@ModelAttribute("ibanForm") IbanForm iban){
         accountService.saveIban(iban);
-        return new ModelAndView("/User/user-profil");
+        return "redirect:/User/profile";
 
     }
 }
