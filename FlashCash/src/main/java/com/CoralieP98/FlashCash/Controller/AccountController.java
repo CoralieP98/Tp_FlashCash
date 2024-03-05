@@ -5,6 +5,7 @@ import com.CoralieP98.FlashCash.Service.AccountService;
 import com.CoralieP98.FlashCash.Service.CustomService;
 import com.CoralieP98.FlashCash.Service.Form.AddCashForm;
 import com.CoralieP98.FlashCash.Service.Form.IbanForm;
+import com.CoralieP98.FlashCash.Service.Form.WithdrawCashForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,6 +50,18 @@ public class AccountController {
     @PostMapping("/addCash")
     public String addCash(@ModelAttribute("addCashForm") AddCashForm amount){
         accountService.addCash(amount);
+        return "redirect:/User/profile";
+    }
+
+    @GetMapping("/withdrawCash")
+    public ModelAndView withdrawCashForm(Model model){
+        model.addAttribute("withdrawCashForm",customService.actualUser().getAccount());
+        return new ModelAndView("/User/withdrawCash");
+    }
+
+    @PostMapping("/withdrawCash")
+    public String withdrawCash(@ModelAttribute("withdrawCashForm") WithdrawCashForm amount){
+        accountService.withdrawCash(amount);
         return "redirect:/User/profile";
     }
 

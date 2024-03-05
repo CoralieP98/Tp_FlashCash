@@ -4,6 +4,7 @@ import com.CoralieP98.FlashCash.Model.Account;
 import com.CoralieP98.FlashCash.Repository.AccountRepository;
 import com.CoralieP98.FlashCash.Service.Form.AddCashForm;
 import com.CoralieP98.FlashCash.Service.Form.IbanForm;
+import com.CoralieP98.FlashCash.Service.Form.WithdrawCashForm;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,5 +32,13 @@ public class AccountService {
 
         curAcccount.setAmount(curAmount + amount.getAmount());
         accountRepository.save(curAcccount);
+    }
+
+    public void withdrawCash(WithdrawCashForm amount){
+        Account curAccount = customService.actualUser().getAccount();
+        double curAmount = curAccount.getAmount();
+
+        curAccount.setAmount(curAmount - amount.getAmount());
+        accountRepository.save(curAccount);
     }
 }

@@ -52,7 +52,7 @@
                 <p>Worldwide</p>
                 <p>Fully secured</p>
             </div>
-            <button class="Services-card-button"><a href="#">START</a></button>
+            <button class="Services-card-button"><a href="/withdrawCash">START</a></button>
         </div>
 
         <div class="Services-card">
@@ -79,7 +79,7 @@
             <tbody>
             <tr th:object="${user}">
                 <td th:text="*{email}"></td>
-                <td th:text="*{account.amount}'€'"></td>
+                <td th:text="*{account.amount}+'€'"></td>
             </tr>
             </tbody>
         </table>
