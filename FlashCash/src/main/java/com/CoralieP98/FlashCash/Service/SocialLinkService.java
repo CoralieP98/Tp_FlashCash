@@ -4,7 +4,6 @@ import com.CoralieP98.FlashCash.Model.SocialLink;
 import com.CoralieP98.FlashCash.Model.User;
 import com.CoralieP98.FlashCash.Repository.SocialLinkRepository;
 import com.CoralieP98.FlashCash.Repository.UserRepository;
-import com.CoralieP98.FlashCash.Service.Form.SocialLinkForm;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
