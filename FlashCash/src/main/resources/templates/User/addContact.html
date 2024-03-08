@@ -21,7 +21,7 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/User/profile">Profile</a></li>
             <li><a href="#">Transfers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
             <li><a href="/logout" id="out">Log out</a></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
@@ -29,32 +29,32 @@
 </nav>
 
 <main>
-    <form action="#" th:action="@{/socialLink/validate}" th:object="${contactForm}" method="POST" class="add_contact_form" >
-        <div class="form-group">
-            <label for="firstName" class="col-sm-2 control-label">FirstName</label>
-            <div class="col-sm-10">
-                <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name" class="contact_placeholder">
-                <!-- <p class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></p> -->
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="lastName" class="col-sm-2 control-label">LastName</label>
-            <div class="col-sm-10">
-                <input type="text" th:field="*{lastName}" id="lastName" placeholder="LastName" class="contact_placeholder">
-                <!-- <p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p> -->
-            </div>
-        </div>
+    <form action="#" th:action="@{/addContact}" th:object="${user}" method="POST" class="add_contact_form" >
+<!--        <div class="form-group">-->
+<!--            <label for="firstName" class="col-sm-2 control-label">FirstName</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name" class="contact_placeholder">-->
+<!--                &lt;!&ndash; <p class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></p> &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="lastName" class="col-sm-2 control-label">LastName</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" th:field="*{lastName}" id="lastName" placeholder="LastName" class="contact_placeholder">-->
+<!--                &lt;!&ndash; <p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p> &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">E-mail</label>
             <div class="col-sm-10">
-                <input type="email" th:field="*{email}" id="email" placeholder="e-mail" class="contact_placeholder">
+                <input type="text" th:field="*{email}" id="email" placeholder="e-mail" class="contact_placeholder">
                 <!-- <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p> -->
             </div>
         </div>
 
         <div class="form-group add_contact_button_layout">
             <div class="">
-                <a class="contact_cancel" href="/socialLink/contact">Cancel</a>
+                <a class="contact_cancel" href="/contact">Cancel</a>
                 <input class="Contact_add_input" type="submit" value="Add contact">
             </div>
         </div>
