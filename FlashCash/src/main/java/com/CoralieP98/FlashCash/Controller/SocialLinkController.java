@@ -67,6 +67,14 @@ public class SocialLinkController {
         return "redirect:/contact";
     }
 
+    @GetMapping("/deleteLink/{email}")
+    public String deleteSocialLink(@PathVariable("email") String email, Model model){
+//        SocialLink link = socialLinkRepository.findBy(s)
+        socialLinkService.deleteLink(email);
+        model.addAttribute("linkList",socialLinkService.getAllFriend());
+        return "redirect:/contact";
+    }
+
 //    @PostMapping("/socialLink/validate")
 //    public String validate(@Valid SocialLink link, BindingResult result, Model model){
 //        if (!result.hasErrors()){

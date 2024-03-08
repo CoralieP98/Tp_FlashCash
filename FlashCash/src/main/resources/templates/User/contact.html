@@ -42,8 +42,8 @@
 <!--                <div class="Contact_col Contact_col-2" data-label="Name" th:text="{socialLinkForm.lastName}"></div>-->
                 <div class="Contact_col Contact_col-3" data-label="email" th:text="${email}"></div>
                 <div class="Contact_col Contact_col-4" data-label="transfer"><button class="Contact_button"><a class="Contact_link" href="">transfer</a></button></div>
-<!--                <div class="Contact_col Contact_col-5" data-label="delete"><button class="Contact_button_del">-->
-<!--                    <a class="Contact_link_del" th:href="@{/delete/{email}(email=${socialLinkForm.email})}">delete</a></button></div>-->
+                <div class="Contact_col Contact_col-5" data-label="delete"><button class="Contact_button_del">
+                    <a class="Contact_link_del" th:href="@{/deleteLink/{email}(email=${email})}">delete</a></button></div>
             </li>
         </ul>
     </div>

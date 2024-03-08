@@ -24,18 +24,6 @@ public class SocialLinkService {
         this.customService = customService;
     }
 
-//    public void addLink(final SocialLinkForm form) {
-//        User user = userRepository
-//                .findUserByMail(form.getEmail())
-//                .orElseThrow(() -> new RuntimeException("user with email " + form.getEmail() + " not found"));
-//        User connectedUser = userRepository.findUserByMail(customService.actualUser().getEmail())
-//                .orElseThrow(() -> new RuntimeException("user with email  not found"));
-//        SocialLink link = new SocialLink();
-//
-//        link.setUser1(connectedUser);
-//        link.setUser2(user);
-//        socialLinkRepository.save(link);
-//    }
 
     public void addLink(User link){
         SocialLink newlink = new SocialLink();
@@ -54,6 +42,11 @@ public class SocialLinkService {
                 .stream().map(SocialLink::getUser2)
                 .map(User::getEmail)
                 .collect(Collectors.toList());
+    }
+
+    public void deleteLink(String email){
+        socialLinkRepository.delete(socialLinkRepository.
+                findSocialLinkByUser1EmailAndUser2Email(customService.actualUser().getEmail(),email));
     }
 
 
