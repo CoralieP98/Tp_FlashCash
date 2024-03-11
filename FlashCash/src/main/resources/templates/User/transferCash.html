@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="../../static/css/home.css"> -->
      <link rel="stylesheet" href="../css/home.css">
     <script src="https://kit.fontawesome.com/84b2e4f32b.js" crossorigin="anonymous"></script>
-    <title>Contact</title>
+    <title>Transfer</title>
 </head>
 
 <body>
@@ -29,31 +29,16 @@
 </nav>
 
 <main>
-    <div class="Contact_container">
-        <h2 class="Contact_title">Contact</h2>
-        <ul class="Contact_responsive-table">
-            <li class="Contact_li Contact_table-header">
-<!--                <div class="Contact_col Contact_col-2 Contact_col_label">Name</div>-->
-                <div class="Contact_col Contact_col-3 Contact_col_label">e-mail</div>
-                <div class="Contact_col Contact_col-4 Contact_col_label">Transfer cash</div>
-                <div class="Contact_col Contact_col-5 Contact_col_label"></div>
-            </li>
-            <li class="Contact_li Contact_table-row" th:each="email : ${linkList}">
-<!--                <div class="Contact_col Contact_col-2" data-label="Name" th:text="{socialLinkForm.lastName}"></div>-->
-                <div class="Contact_col Contact_col-3" data-label="email" th:text="${email}"></div>
-                <div class="Contact_col Contact_col-4" data-label="transfer"><button class="Contact_button"><a class="Contact_link" th:href="@{/transferCash/{email}(email=${email})}">transfer</a></button></div>
-                <div class="Contact_col Contact_col-5" data-label="delete"><button class="Contact_button_del">
-                    <a class="Contact_link_del" th:href="@{/deleteLink/{email}(email=${email})}">delete</a></button></div>
-            </li>
-        </ul>
+    <div class="body-text">
+        <div class="title">Transfer to your contact</div>
     </div>
-
-    <div class="Contact_add">
-        <button class="Contact_button_add"><a href="/addContact" class="Contact_link_add">Add new Contact</a></button>
-    </div>
-
-
-
+    <section >
+        <form class="Form-addIban" th:action="@{/transferCash}" th:object="${transferCashForm}" method="POST">
+            <h2 class="Form-addIban-title">Select the amount</h2>
+            <input class="Form-addIban-input" type="number" th:field="*{amount_before_fee}" min="0" th:max="*{user_from.account.amount}" placeholder="cash amount" />
+            <button class="Form-addIban-butn" type="submit">transfer</button>
+        </form>
+    </section>
 
 
 </main>
