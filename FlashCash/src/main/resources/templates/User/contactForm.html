@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-<!--    <link rel="stylesheet" href="home.css">-->
-    <!-- <link rel="stylesheet" href="../../static/css/home.css"> -->
-     <link rel="stylesheet" href="../css/home.css">
+
+        <link rel="stylesheet" href="../css/home.css">
     <script src="https://kit.fontawesome.com/84b2e4f32b.js" crossorigin="anonymous"></script>
-    <title>Add IBAN</title>
+    <title>My Profile</title>
 </head>
 
 <body>
@@ -28,18 +27,28 @@
     </div>
 </nav>
 
-<main>
-    <div class="body-text">
-        <div class="title">Add an IBAN</div>
-    </div>
-    <section >
-        <form class="Form-addIban" th:action="@{/addIban}" th:object="${ibanForm}" method="POST">
-            <h2 class="Form-addIban-title">Add your Iban</h2>
-            <input class="Form-addIban-input" type="text" th:field="*{iban1}" placeholder="Your IBAN" />
-            <button class="Form-addIban-butn" type="submit">Add</button>
-        </form>
-    </section>
+<main class="ContactForm">
+    <div class="ContactForm-container" id="ContactForm-container">
+        <div class="ContactForm-form-container ContactForm-sign-in-container">
+            <form class="form" th:action="@{/serviceClient}" th:object="${contactForm}" method="POST">
 
+                <h1 class="ContactForm-title h1">Formulaire de contact</h1>
+
+                <input class="input" type="text"  placeholder="Last Name" />
+                <input class="input" type="email"  placeholder="Email" required autofocus/>
+                <input class="input message" type="text"  placeholder="Your message"  />
+            </form>
+        </div>
+        <div class="ContactForm-overlay-container">
+            <div class="ContactForm-overlay">
+                <div class="ContactForm-overlay-panel ContactForm-overlay-right">
+                    <h1 class="h1">Contact Us!</h1>
+                    <p class="p">Thank you for you message, we'll keep you in touch</p>
+                    <button class="ContactForm-ghost button" id="ContactForm-signIn"><a class="ContactForm-signInLink a" href="/User/profile">Submit</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </main>
 
