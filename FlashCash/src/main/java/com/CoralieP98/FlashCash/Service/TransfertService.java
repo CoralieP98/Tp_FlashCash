@@ -29,7 +29,7 @@ public class TransfertService {
         User user1 =userRepository.findUserByMail(transfert.getUser_from().getEmail()).get();
         User user2 =userRepository.findUserByMail(transfert.getUser_to().getEmail()).get();
         double amount_before_fee = transfert.getAmount_before_fee();
-        double amount_after_fee = amount_before_fee+1.005;
+        double amount_after_fee = amount_before_fee*1.005;
         user1.getAccount().setAmount(user1.getAccount().getAmount()- amount_after_fee);
         user2.getAccount().setAmount(user2.getAccount().getAmount()+ amount_before_fee);
         userRepository.save(user1);
