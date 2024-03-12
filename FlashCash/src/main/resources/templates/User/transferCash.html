@@ -35,6 +35,8 @@
     <section >
         <form class="Form-addIban" th:action="@{/transferCash}" th:object="${transferCashForm}" method="POST">
             <h2 class="Form-addIban-title">Select the amount</h2>
+            <input th:field="*{user_from.email}" style="display:none">
+            <input th:field="*{user_to.email}" style="display:none">
             <input class="Form-addIban-input" type="number" th:field="*{amount_before_fee}" min="0" th:max="*{user_from.account.amount}" placeholder="cash amount" />
             <button class="Form-addIban-butn" type="submit">transfer</button>
         </form>
